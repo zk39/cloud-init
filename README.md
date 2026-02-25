@@ -18,4 +18,4 @@ bash <(wget -qO- "https://raw.githubusercontent.com/zk39/cloud-init/refs/heads/m
 |----------|----------|---------|-------------|
 | username | ✅ | — | New user to create |
 | password | ✅ | — | Password for the user |
-| port | ❌ | 9122 | Custom SSH port number |
+| port | ❌ | 9922 | Custom SSH port number |
