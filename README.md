@@ -1,6 +1,6 @@
 # Cloud Init Script
 
-Quick setup for your cloud instance  — user, SSH, firewall, and Node.js environment 
+Quick setup for your cloud instance  — user, SSH, firewall, and Node.js/nvm environment 
 
 ## Usage
 
