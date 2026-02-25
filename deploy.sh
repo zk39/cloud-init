@@ -36,18 +36,18 @@ echo "[OK] 用户创建完成"
 # ===== 2. 配置 SSH =====
 echo "配置 SSH..."
 
-sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-
 sudo tee /etc/ssh/sshd_config.d/99-$USER.conf > /dev/null << EOL
 Port $SSH_PORT
 PermitRootLogin no
 AllowUsers $CURRENT_USER $USER
-PasswordAuthentication yes
 PubkeyAuthentication yes
+
+Match User $USER
+    PasswordAuthentication yes
 EOL
 
 sudo systemctl restart ssh
-
+ 
 echo "[OK] SSH 配置完成"
 
 # ===== 3. 配置防火墙 =====
