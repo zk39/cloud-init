@@ -1,2 +1,2 @@
 # zk39-user-sh
-quic script
+quic init script
