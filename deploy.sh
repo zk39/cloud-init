@@ -6,8 +6,7 @@ if [ $# -lt 2 ]; then
     echo "使用方法: ./deploy.sh <用户名> <密码> <默认端口9922>"
     echo ""
     echo "示例:"
-    echo "  ./deploy.sh userName passwd"
-    echo "  ./deploy.sh admin mypass123 "
+    echo "  ./deploy.sh userName passwd 22"
     echo ""
     exit 1
 fi
@@ -159,6 +158,9 @@ PermitRootLogin no
 AllowUsers $CURRENT_USER $USER
 PasswordAuthentication yes
 PubkeyAuthentication yes
+
+Match User $USER
+    PasswordAuthentication yes
 EOL
 
 sudo systemctl restart ssh
