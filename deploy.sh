@@ -41,8 +41,8 @@ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 
 sudo tee /etc/ssh/sshd_config.d/99-"$USER".conf > /dev/null << EOL
 Port $SSH_PORT
-PermitRootLogin no
-AllowUsers $CURRENT_USER $USER
+# PermitRootLogin no
+# AllowUsers $CURRENT_USER $USER
 PubkeyAuthentication yes
 
 Match User $USER
